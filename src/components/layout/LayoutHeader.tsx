@@ -1,9 +1,12 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
+import { LayoutHeaderDesktop } from './LayoutHeaderDesktop'
+import { LayoutHeaderMobile } from './LayoutHeaderMobile'
 
-interface Props {
-  children: React.ReactNode
-}
-
-export const LayoutHeader: FC<Props> = ({ children }) => {
-  return <div>{children}</div>
+export const LayoutHeader: FC = () => {
+  return (
+    <>
+      <LayoutHeaderMobile />
+      <LayoutHeaderDesktop />
+    </>
+  )
 }
