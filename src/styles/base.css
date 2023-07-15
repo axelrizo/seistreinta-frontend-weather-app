@@ -1,0 +1,17 @@
+* {
+  font-family: var(--font-montserrat);
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgb(220, 220, 220);
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #b1b1b1 0%, #555555 100%);
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
