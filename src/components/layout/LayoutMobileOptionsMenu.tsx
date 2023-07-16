@@ -3,8 +3,8 @@ import { useThemeToggle } from '@/hooks/useThemeToggle'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC, useContext } from 'react'
+import { BsMoon, BsSun } from 'react-icons/bs'
 import style from './LayoutMobileOptionsMenu.module.css'
-import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs'
 
 interface Props {
   isOptionsAsideOpen: boolean
@@ -36,7 +36,7 @@ export const LayoutMobileOptionsMenu: FC<Props> = ({ isOptionsAsideOpen }) => {
         </li>
         <li className={`${style['options-aside__list-item']}`}>
           <button className={`${style['options-aside__button-theme']}`} onClick={() => handleChangeTheme()}>
-            {isDarkThemeActive ? <BsFillSunFill /> : <BsFillMoonFill />}
+            {isDarkThemeActive ? <BsSun size={30} /> : <BsMoon size={30} />}
           </button>
         </li>
       </ul>

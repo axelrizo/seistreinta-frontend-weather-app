@@ -44,5 +44,10 @@
 }
 
 .options-aside__button-theme {
-  background-color: blue;
+  background-color: transparent;
+  color: var(--background-white-2-text-color-brand-ocean-blue);
+  border-radius: 100%;
+  padding: 10px;
+  border: none;
+  display: block;
 }
