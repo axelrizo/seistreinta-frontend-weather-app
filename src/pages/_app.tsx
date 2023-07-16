@@ -1,5 +1,6 @@
 import { LayoutDefault } from '@/components/layout/LayoutDefault'
 import { NotificationProvider } from '@/context/NotificationContext'
+import { SearchInformationProvider } from '@/context/SearchInformationContext'
 import { ThemeProvider } from '@/context/ThemeContext'
 import '@/styles/base.css'
 import '@/styles/colors.css'
@@ -11,9 +12,11 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
       <NotificationProvider>
-        <LayoutDefault>
-          <Component {...pageProps} />
-        </LayoutDefault>
+        <SearchInformationProvider>
+          <LayoutDefault>
+            <Component {...pageProps} />
+          </LayoutDefault>
+        </SearchInformationProvider>
       </NotificationProvider>
     </ThemeProvider>
   )
