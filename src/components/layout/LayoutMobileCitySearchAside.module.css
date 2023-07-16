@@ -16,3 +16,20 @@
 .search-aside--open {
   transform: translateX(0);
 }
+
+.search-aside__input-container {
+  padding: 16px;
+  position: relative;
+}
+
+.search-aside__icon-container {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  color: var(--color-brand-ocean-blue);
+}
+
+.search-aside__input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+}
