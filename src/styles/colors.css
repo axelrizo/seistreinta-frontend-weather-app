@@ -6,9 +6,15 @@
 
   --background-white: var(--color-white);
   --background-white-text-color-brand-darker-blue: var(--color-brand-darker-blue);
+
+  --background-white-2: var(--color-white);
+  --background-white-2-text-color-white: var(--color-brand-ocean-blue);
 }
 
 .app--dark {
   --background-white: var(--color-brand-darker-blue);
   --background-white-text-color-brand-darker-blue: var(--color-white);
+
+  --background-white-2: var(--color-brand-ocean-blue);
+  --background-white-2-text-color-white: var(--color-white);
 }
