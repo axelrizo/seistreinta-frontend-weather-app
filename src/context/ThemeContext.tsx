@@ -9,7 +9,7 @@ interface Context {
   toggleTheme: () => void
 }
 
-export const ThemeContext = React.createContext<Context | null>(null)
+export const ThemeContext = React.createContext<Context>({} as Context)
 
 export const ThemeProvider: FC<Props> = ({ children }) => {
   const [isDarkThemeActive, setIsDarkThemeActive] = useState(false)

@@ -1,0 +1,14 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-brand-ocean-blue: #1e213a;
+  --color-brand-darker-blue: #100e1d;
+
+  --background-white: var(--color-white);
+  --background-white-text-color-brand-darker-blue: var(--color-brand-darker-blue);
+}
+
+.app--dark {
+  --background-white: var(--color-brand-darker-blue);
+  --background-white-text-color-brand-darker-blue: var(--color-white);
+}

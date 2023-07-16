@@ -1,15 +1,18 @@
 import { LayoutDefault } from '@/components/layout/LayoutDefault'
-import '@/styles/normalize.css'
+import { ThemeProvider } from '@/context/ThemeContext'
 import '@/styles/base.css'
 import '@/styles/colors.css'
+import '@/styles/normalize.css'
 import { appWithTranslation } from 'next-i18next'
 import type { AppProps } from 'next/app'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <LayoutDefault>
-      <Component {...pageProps} />
-    </LayoutDefault>
+    <ThemeProvider>
+      <LayoutDefault>
+        <Component {...pageProps} />
+      </LayoutDefault>
+    </ThemeProvider>
   )
 }
 

@@ -1,6 +1,6 @@
-import { ThemeProvider } from '@/context/ThemeContext'
+import { ThemeContext } from '@/context/ThemeContext'
 import { Montserrat } from 'next/font/google'
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import { LayoutFooter } from './LayoutFooter'
 import { LayoutHeader } from './LayoutHeader'
 
@@ -14,13 +14,14 @@ interface Props {
 }
 
 export const LayoutDefault: FC<Props> = ({ children }) => {
+  const { isDarkThemeActive, toggleTheme } = useContext(ThemeContext)
+  const themeClass = isDarkThemeActive ? 'app--dark' : ''
+
   return (
-    <ThemeProvider>
-      <div className={montserrat.variable}>
-        <LayoutHeader />
-        {children}
-        <LayoutFooter />
-      </div>
-    </ThemeProvider>
+    <div className={`${montserrat.variable} ${themeClass}`}>
+      <LayoutHeader />
+      {children}
+      <LayoutFooter />
+    </div>
   )
 }
