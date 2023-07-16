@@ -5,6 +5,15 @@
   "layout": {
     "menu-search": "Buscar",
     "menu-weather": "Clima",
-    "menu-options": "Opciones"
+    "menu-options": "Opciones",
+    "no-data": "No encontramos la ciudad que estabas buscando.",
+    "error-search": "Hubo un problema",
+    "search-loading": "Cargando..."
+  },
+  "notifications": {
+    "getCountryNames": {
+      "error": "Hubo un error al consultar la información",
+      "empty": "No se encontró la ciudad"
+    }
   }
 }

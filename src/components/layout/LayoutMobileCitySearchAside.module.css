@@ -22,6 +22,10 @@
   position: relative;
 }
 
+.search-aside__results-container {
+  padding: 16px 16px 0 16px;
+}
+
 .search-aside__icon-container {
   position: absolute;
   top: 22px;
