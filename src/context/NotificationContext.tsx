@@ -24,7 +24,6 @@ export const NotificationProvider: FC<Props> = ({ children }) => {
   }
 
   const removeNotification = ({ id }: NotificationRemovePayload) => {
-    console.log(id)
     setNotifications((value) => value.filter((notification) => notification.id !== id))
   }
 
