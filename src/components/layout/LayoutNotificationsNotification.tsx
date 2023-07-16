@@ -1,6 +1,6 @@
 import { NotificationContext } from '@/context/NotificationContext'
 import { Notification } from '@/interfaces/Notification'
-import React, { FC, useContext } from 'react'
+import React, { FC, useContext, useEffect } from 'react'
 import styles from './LayoutNotificationsNotification.module.css'
 import { AiFillCloseCircle } from 'react-icons/ai'
 
@@ -14,6 +14,12 @@ export const LayoutNotificationsNotification: FC<Props> = ({ notification }) => 
   const handleCloseButton = () => {
     removeNotification({ id: notification.id })
   }
+
+  useEffect(() => {
+    setTimeout(() => {
+      removeNotification({ id: notification.id })
+    }, notification.duration * 1000)
+  }, [])
 
   const notificationClassStatus =
     notification.type === 'success' ? styles['notification--success'] : styles['notification--error']
