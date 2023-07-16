@@ -1,5 +1,10 @@
 {
   "footer": {
     "text": "creado por Axel Rizo"
+  },
+  "layout": {
+    "menu-search": "Buscar",
+    "menu-weather": "Clima",
+    "menu-options": "Opciones"
   }
 }

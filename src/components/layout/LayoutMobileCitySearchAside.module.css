@@ -1,0 +1,16 @@
+.search-aside {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+  background-color: var(--background-ocean-blue);
+  color: var(--background-ocean-blue-text-color-white);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+  border-right: solid;
+}
+
+.search-aside--open {
+  transform: translateX(0);
+}

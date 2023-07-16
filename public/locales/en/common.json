@@ -1,5 +1,10 @@
 {
   "footer": {
     "text": "created by Axel Rizo"
+  },
+  "layout": {
+    "menu-search": "Search",
+    "menu-weather": "Weather",
+    "menu-options": "Options"
   }
 }
