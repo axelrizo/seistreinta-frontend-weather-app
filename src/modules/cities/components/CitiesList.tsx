@@ -1,5 +1,5 @@
 import React from 'react'
 
-export const WeatherCitiesResultsList = () => {
+export const CitiesList = () => {
   return <div>WeatherCitiesResultsList</div>
 }

@@ -1,5 +1,5 @@
-import { CityGeocodeInformation } from '../interfaces/CitiesInformation'
-import { openWeatherMapBaseAxiosInstance } from './openWeatherMap.instances'
+import { CityGeocodeInformation } from '../../cities/interfaces/CitiesInformation'
+import { openWeatherMapBaseAxiosInstance } from '../instances/openWeatherMap.instances'
 
 export const geocodingService = {
   async getCities({ cityName }: { cityName: string }) {

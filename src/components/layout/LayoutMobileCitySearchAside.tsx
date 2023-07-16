@@ -1,9 +1,9 @@
-import { WeatherCitiesResultsList } from '@/modules/weather/components/WeatherCitiesResultsList'
+import { CitiesList } from '@/modules/cities/components/CitiesList'
 import { FC, useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import style from './LayoutMobileCitySearchAside.module.css'
 import { useFetch } from '@/hooks/useFetch'
-import { geocodingService } from '@/modules/weather/services/openWeatherMap.services'
+import { geocodingService } from '@/modules/openWeatherMap/services/openWeatherMap.geocoding.services'
 import { useFetchGetNotification } from '@/hooks/useFetchGetNotification'
 import { useTranslation } from 'next-i18next'
 
@@ -62,7 +62,7 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen }) =>
         ) : error ? (
           <div>{t('layout.error-search')}</div>
         ) : (
-          <WeatherCitiesResultsList />
+          <CitiesList />
         )}
       </div>
     </aside>
