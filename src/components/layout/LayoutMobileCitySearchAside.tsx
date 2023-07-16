@@ -3,7 +3,7 @@ import { FC, useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import style from './LayoutMobileCitySearchAside.module.css'
 import { useFetch } from '@/hooks/useFetch'
-import { geocodingService } from '@/modules/openWeatherMap/services/openWeatherMap.geocoding.services'
+import { citiesServices } from '@/modules/cities/services/cities.services'
 import { useFetchGetNotification } from '@/hooks/useFetchGetNotification'
 import { useTranslation } from 'next-i18next'
 
@@ -22,7 +22,7 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen }) =>
     fetchData: getCountryNames,
     loading,
   } = useFetch({
-    fetchFunction: geocodingService.getCities,
+    fetchFunction: citiesServices.getCities,
   })
 
   const { fetchData } = useFetchGetNotification({
@@ -62,7 +62,7 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen }) =>
         ) : error ? (
           <div>{t('layout.error-search')}</div>
         ) : (
-          <CitiesList />
+          <CitiesList cities={data} />
         )}
       </div>
     </aside>

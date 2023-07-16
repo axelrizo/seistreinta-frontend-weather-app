@@ -1,7 +1,7 @@
-import { CityGeocodeInformation } from '../../cities/interfaces/CitiesInformation'
-import { openWeatherMapBaseAxiosInstance } from '../instances/openWeatherMap.instances'
+import { CityGeocodeInformation } from '../interfaces/CitiesInformation'
+import { openWeatherMapBaseAxiosInstance } from '../../openWeatherMap/instances/openWeatherMap.instances'
 
-export const geocodingService = {
+export const citiesServices = {
   async getCities({ cityName }: { cityName: string }) {
     const MAX_ALLOWED_CITIES_API_LIMIT = 5
     const response = await openWeatherMapBaseAxiosInstance<CityGeocodeInformation[]>('/geo/1.0/direct', {
