@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import React, { FC, useContext } from 'react'
 import { LayoutFooter } from './LayoutFooter'
 import { LayoutHeader } from './LayoutHeader'
+import { LayoutNotifications } from './LayoutNotifications'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -19,6 +20,7 @@ export const LayoutDefault: FC<Props> = ({ children }) => {
 
   return (
     <div className={`${montserrat.variable} ${themeClass}`}>
+      <LayoutNotifications />
       <LayoutHeader />
       {children}
       <LayoutFooter />
