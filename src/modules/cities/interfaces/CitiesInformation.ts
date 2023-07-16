@@ -1,4 +1,4 @@
-export interface CityGeocodeInformation {
+export interface CityInformation {
   name: string
   lat: number
   lon: number
