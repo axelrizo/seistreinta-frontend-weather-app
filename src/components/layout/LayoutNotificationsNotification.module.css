@@ -1,0 +1,16 @@
+.notification {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
+  padding: 16px;
+}
+
+.notification--success {
+  background-color: var(--color-green-700);
+  color: var(--color-white);
+}
+
+.notification--error {
+  background-color: var(--color-red-600);
+  color: var(--color-white);
+}
