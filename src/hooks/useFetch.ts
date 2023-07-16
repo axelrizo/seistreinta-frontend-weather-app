@@ -14,6 +14,7 @@ export const useFetch = <T>({ fetchFunction }: { fetchFunction: (payload: any) =
     } catch (error) {
       if (error instanceof Error) setError(error)
       else setError(new Error('An unexpected error ocurred.'))
+      throw error
     } finally {
       setLoading(false)
     }
