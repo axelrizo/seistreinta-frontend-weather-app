@@ -1,0 +1,15 @@
+.list-item {
+  display: flex;
+  gap: 16px;
+  padding: 8px;
+  align-items: center;
+  border: 1px solid;
+  margin: 8px 0;
+  justify-content: space-between;
+}
+
+.list_item__city {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
