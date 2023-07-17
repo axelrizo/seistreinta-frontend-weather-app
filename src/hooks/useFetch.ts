@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-export const useFetch = <T>({ fetchFunction }: { fetchFunction: (payload: any) => Promise<T> }) => {
+export const useFetch = <T, U>({ fetchFunction }: { fetchFunction: (payload: U) => Promise<T> }) => {
   const [data, setData] = useState<null | T>(null)
   const [loading, setLoading] = useState<null | boolean>(null)
   const [error, setError] = useState<null | Error>(null)
 
-  const fetchData = async (payload: any) => {
+  const fetchData = async (payload: U) => {
     setError(null)
     setLoading(true)
     try {

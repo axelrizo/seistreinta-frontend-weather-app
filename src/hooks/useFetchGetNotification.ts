@@ -1,16 +1,16 @@
 import { NotificationContext } from '@/context/NotificationContext'
 import { useContext } from 'react'
 
-export const useFetchGetNotification = <T>({
+export const useFetchGetNotification = <T, U>({
   fetchFunction,
   failText,
 }: {
-  fetchFunction: (payload: any) => Promise<T>
+  fetchFunction: (payload: U) => Promise<T>
   failText: string
 }) => {
   const { createNotification } = useContext(NotificationContext)
 
-  const fetchData = async (payload: any) => {
+  const fetchData = async (payload: U) => {
     try {
       return await fetchFunction(payload)
     } catch (error) {
