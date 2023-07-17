@@ -17,7 +17,7 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen, clos
   const asideOpenClass = isSearchAsideOpen ? style['search-aside--open'] : ''
   const [search, setSearch] = useState('')
   const { t } = useTranslation()
-  const { updateCityName } = useContext(SearchInformationContext)
+  const { updateCity } = useContext(SearchInformationContext)
 
   const {
     data,
@@ -54,7 +54,7 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen, clos
     name: string
     country: string
   }) => {
-    updateCityName({ lat, lon, country, name })
+    updateCity({ lat, lon, country, name })
     closeAsideMenu()
   }
 

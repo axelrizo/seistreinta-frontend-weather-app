@@ -1,24 +1,45 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 
 interface Props {
   children: React.ReactNode
 }
 
+interface CityContextData {
+  lat: number
+  lon: number
+  name: string
+  country: string
+}
+
 interface Context {
-  city: { lat: number; lon: number; name: string; country: string } | null
-  updateCityName: ({ lat, lon, country, name }: { lat: number; lon: number; name: string; country: string }) => void
+  city: CityContextData | null
+  updateCity: ({ lat, lon, country, name }: CityContextData) => void
 }
 
 export const SearchInformationContext = React.createContext<Context>({} as Context)
 
 export const SearchInformationProvider: FC<Props> = ({ children }) => {
-  const [city, setCity] = useState<{ lat: number; lon: number; name: string; country: string } | null>(null)
+  const [city, setCity] = useState<CityContextData | null>(null)
 
-  const updateCityName = ({ lat, lon, country, name }: { lat: number; lon: number; name: string; country: string }) => {
-    setCity({ lat, lon, country, name })
+  const setLocalStorage = (cityInfo: CityContextData) => {
+    localStorage.setItem('city', JSON.stringify(cityInfo))
   }
 
-  return (
-    <SearchInformationContext.Provider value={{ city, updateCityName }}>{children}</SearchInformationContext.Provider>
-  )
+  const readLocalStorage = () => {
+    const city = localStorage.getItem('city')
+    if (!city) return
+    const cityParsed: CityContextData = JSON.parse(city)
+    setCity(cityParsed)
+  }
+
+  const updateCity = (cityInfo: CityContextData) => {
+    setCity(cityInfo)
+    setLocalStorage(cityInfo)
+  }
+
+  useEffect(() => {
+    readLocalStorage()
+  }, [])
+
+  return <SearchInformationContext.Provider value={{ city, updateCity }}>{children}</SearchInformationContext.Provider>
 }
