@@ -5,22 +5,20 @@ interface Props {
 }
 
 interface Context {
-  cityName: string
-  updateCityName: ({ city }: { city: string }) => void
+  city: { lat: number; lon: number; name: string; country: string } | null
+  updateCityName: ({ lat, lon, country, name }: { lat: number; lon: number; name: string; country: string }) => void
 }
 
 export const SearchInformationContext = React.createContext<Context>({} as Context)
 
 export const SearchInformationProvider: FC<Props> = ({ children }) => {
-  const [cityName, setCityName] = useState('')
+  const [city, setCity] = useState<{ lat: number; lon: number; name: string; country: string } | null>(null)
 
-  const updateCityName = ({ city }: { city: string }) => {
-    setCityName(city)
+  const updateCityName = ({ lat, lon, country, name }: { lat: number; lon: number; name: string; country: string }) => {
+    setCity({ lat, lon, country, name })
   }
 
   return (
-    <SearchInformationContext.Provider value={{ cityName, updateCityName }}>
-      {children}
-    </SearchInformationContext.Provider>
+    <SearchInformationContext.Provider value={{ city, updateCityName }}>{children}</SearchInformationContext.Provider>
   )
 }

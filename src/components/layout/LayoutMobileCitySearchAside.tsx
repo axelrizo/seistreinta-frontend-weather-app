@@ -1,20 +1,23 @@
 import { CitiesList } from '@/modules/cities/components/CitiesList'
-import { FC, useState } from 'react'
+import { FC, useState, useContext } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import style from './LayoutMobileCitySearchAside.module.css'
 import { useFetch } from '@/hooks/useFetch'
 import { citiesServices } from '@/modules/cities/services/cities.services'
 import { useFetchGetNotification } from '@/hooks/useFetchGetNotification'
 import { useTranslation } from 'next-i18next'
+import { SearchInformationContext } from '@/context/SearchInformationContext'
 
 interface Props {
   isSearchAsideOpen: boolean
+  closeAsideMenu: () => void
 }
 
-export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen }) => {
+export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen, closeAsideMenu }) => {
   const asideOpenClass = isSearchAsideOpen ? style['search-aside--open'] : ''
   const [search, setSearch] = useState('')
   const { t } = useTranslation()
+  const { updateCityName } = useContext(SearchInformationContext)
 
   const {
     data,
@@ -40,6 +43,21 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen }) =>
     setSearch(e.currentTarget.value)
   }
 
+  const handleClickACity = ({
+    lat,
+    lon,
+    country,
+    name,
+  }: {
+    lat: number
+    lon: number
+    name: string
+    country: string
+  }) => {
+    updateCityName({ lat, lon, country, name })
+    closeAsideMenu()
+  }
+
   return (
     <aside className={`${style['search-aside']} ${asideOpenClass}`}>
       <div className={`${style['search-aside__input-container']}`}>
@@ -62,7 +80,7 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen }) =>
         ) : error ? (
           <div>{t('layout.error-search')}</div>
         ) : (
-          <CitiesList cities={data} />
+          <CitiesList cities={data} onClickACity={handleClickACity} />
         )}
       </div>
     </aside>
