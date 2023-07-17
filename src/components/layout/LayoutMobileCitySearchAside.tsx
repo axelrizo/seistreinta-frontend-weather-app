@@ -75,10 +75,10 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen, clos
       <div className={`${style['search-aside__results-container']}`}>
         {loading ? (
           <div>{t('layout.search-loading')}</div>
-        ) : Array.isArray(data) && data?.length < 1 ? (
-          <div>{t('layout.no-data')}</div>
         ) : error ? (
           <div>{t('layout.error-search')}</div>
+        ) : Array.isArray(data) && data?.length < 1 ? (
+          <div>{t('layout.no-data')}</div>
         ) : (
           <CitiesList cities={data} onClickACity={handleClickACity} />
         )}
