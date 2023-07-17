@@ -7,6 +7,7 @@ import '@/styles/colors.css'
 import '@/styles/normalize.css'
 import { appWithTranslation } from 'next-i18next'
 import type { AppProps } from 'next/app'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 function App({ Component, pageProps }: AppProps) {
   return (
