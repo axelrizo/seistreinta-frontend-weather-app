@@ -15,5 +15,8 @@
       "error": "There was an error getting the information",
       "empty": "Can't find this city"
     }
+  },
+  "index": {
+    "page-not-selected": "You haven't selected a city, please select one."
   }
 }

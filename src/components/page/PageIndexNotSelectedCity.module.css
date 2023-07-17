@@ -1,0 +1,12 @@
+.nocity-page {
+  height: 100vh;
+  padding: 16px;
+  margin: -8px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  text-align: center;
+  line-height: 1.5;
+}

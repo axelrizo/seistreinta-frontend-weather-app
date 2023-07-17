@@ -15,5 +15,8 @@
       "error": "Hubo un error al consultar la información",
       "empty": "No se encontró la ciudad"
     }
+  },
+  "index": {
+    "page-not-selected": "No has seleccionado una ciudad, por favor selecciona una."
   }
 }
