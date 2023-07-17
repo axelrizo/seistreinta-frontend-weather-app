@@ -17,6 +17,7 @@
     }
   },
   "index": {
-    "page-not-selected": "No has seleccionado una ciudad, por favor selecciona una."
+    "page-not-selected": "No has seleccionado una ciudad, por favor selecciona una.",
+    "not-lan-lon-found": "No se encontró la información"
   }
 }
