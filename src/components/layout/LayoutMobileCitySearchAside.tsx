@@ -44,6 +44,7 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen, clos
 
   const handleChangeOnSearchInput = (e: React.FormEvent<HTMLInputElement>) => {
     setSearch(e.currentTarget.value)
+    if (e.currentTarget.value.length > 3) fetchData({ cityName: search })
   }
 
   const handleClickACity = ({
