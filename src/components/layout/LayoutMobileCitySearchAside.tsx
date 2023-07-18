@@ -14,11 +14,13 @@ interface Props {
 }
 
 export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen, closeAsideMenu }) => {
-  const asideOpenClass = isSearchAsideOpen ? style['search-aside--open'] : ''
   const [search, setSearch] = useState('')
   const { t } = useTranslation()
   const { updateCity } = useContext(SearchInformationContext)
   const searchInput = useRef<HTMLInputElement>(null)
+
+  const asideContainerOpenClass = isSearchAsideOpen ? style['search-aside__container--open'] : ''
+  const asideOpenClass = isSearchAsideOpen ? style['search-aside--open'] : ''
 
   const {
     data,
@@ -59,35 +61,42 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen, clos
     closeAsideMenu()
   }
 
+  const handleClickMask = () => {
+    closeAsideMenu()
+  }
+
   useEffect(() => {
     if (isSearchAsideOpen) searchInput?.current?.focus()
   }, [isSearchAsideOpen])
 
   return (
     <aside className={`${style['search-aside']} ${asideOpenClass}`}>
-      <div className={`${style['search-aside__input-container']}`}>
-        <div className={`${style['search-aside__icon-container']}`}>
-          <AiOutlineSearch size={30} />
+      <div onClick={handleClickMask} className={`${style['search-aside__mask']}`} />
+      <div className={`${style['search-aside__container']} ${asideContainerOpenClass}`}>
+        <div className={`${style['search-aside__input-container']}`}>
+          <div className={`${style['search-aside__icon-container']}`}>
+            <AiOutlineSearch size={30} />
+          </div>
+          <input
+            type="search"
+            value={search}
+            ref={searchInput}
+            onKeyUp={(e) => handleKeyUpInInput(e)}
+            onChange={(e) => handleChangeOnSearchInput(e)}
+            className={`${style['search-aside__input']}`}
+          />
         </div>
-        <input
-          type="search"
-          value={search}
-          ref={searchInput}
-          onKeyUp={(e) => handleKeyUpInInput(e)}
-          onChange={(e) => handleChangeOnSearchInput(e)}
-          className={`${style['search-aside__input']}`}
-        />
-      </div>
-      <div className={`${style['search-aside__results-container']}`}>
-        {loading ? (
-          <div>{t('layout.search-loading')}</div>
-        ) : error ? (
-          <div>{t('layout.error-search')}</div>
-        ) : Array.isArray(data) && data?.length < 1 ? (
-          <div>{t('layout.no-data')}</div>
-        ) : (
-          <CitiesList cities={data} onClickACity={handleClickACity} />
-        )}
+        <div className={`${style['search-aside__results-container']}`}>
+          {loading ? (
+            <div>{t('layout.search-loading')}</div>
+          ) : error ? (
+            <div>{t('layout.error-search')}</div>
+          ) : Array.isArray(data) && data?.length < 1 ? (
+            <div>{t('layout.no-data')}</div>
+          ) : (
+            <CitiesList cities={data} onClickACity={handleClickACity} />
+          )}
+        </div>
       </div>
     </aside>
   )
