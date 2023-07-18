@@ -1,5 +1,6 @@
 :root {
   --color-white: #ffffff;
+  --color-gray-100: #f3f4f6;
   --color-black: #000000;
   --color-green-700: #4d7c0f;
   --color-red-600: #be123c;
@@ -9,7 +10,7 @@
   --background-white: var(--color-white);
   --background-white-text-color-brand-darker-blue: var(--color-brand-darker-blue);
 
-  --background-white-2: var(--color-white);
+  --background-white-2: var(--color-gray-100);
   --background-white-2-text-color-brand-ocean-blue: var(--color-brand-ocean-blue);
 }
 
