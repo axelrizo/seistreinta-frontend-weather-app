@@ -18,6 +18,10 @@
   },
   "index": {
     "page-not-selected": "No has seleccionado una ciudad, por favor selecciona una.",
-    "not-lan-lon-found": "No se encontró la información"
+    "not-lan-lon-found": "No se encontró la información",
+    "wind": "Estado del viento",
+    "humidity": "Humedad",
+    "visibility": "Visibilidad",
+    "air-pressure": "Presión del Aire"
   }
 }

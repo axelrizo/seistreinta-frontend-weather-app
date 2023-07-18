@@ -1,0 +1,23 @@
+.highlight-card {
+  background-color: var(--background-white);
+  color: var(--background-white-text-color-brand-darker-blue);
+}
+.highlight-card__title {
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  padding-top: 16px;
+}
+.highlight-card__data {
+  font-size: 56px;
+  margin: 0;
+  padding: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.highlight-card__measure {
+  font-size: 24px;
+  position: relative;
+  top: -8px;
+  left: 4px;
+}
