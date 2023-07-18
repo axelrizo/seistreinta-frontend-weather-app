@@ -1,5 +1,24 @@
 
 
+## [1.1.0](https://github.com/axelrizo/seistreinta-frontend-weather-app/compare/1.0.1...1.1.0) (2023-07-18)
+
+
+### Features
+
+* **cities:** add close when click outside ([2f61342](https://github.com/axelrizo/seistreinta-frontend-weather-app/commit/2f61342f5d6d49891dae30c0aba0e0f97204eb7c))
+* **header:** add close when click outside ([466981b](https://github.com/axelrizo/seistreinta-frontend-weather-app/commit/466981b8568d6efcd62878427b837c157a27793d))
+* **input:** add auto focus when open search aside ([7b19e2d](https://github.com/axelrizo/seistreinta-frontend-weather-app/commit/7b19e2d322de0d5691f05c0452d1dae861f7c6af))
+* **weather:** humidity status bar created ([37f397c](https://github.com/axelrizo/seistreinta-frontend-weather-app/commit/37f397cab503a3c3cae284a9f4c66c905c0cdc8a))
+* **wind:** add wind indicator ([a9cab49](https://github.com/axelrizo/seistreinta-frontend-weather-app/commit/a9cab49c9621803be92abe4147ee01deda021927))
+
+
+### Bug Fixes
+
+* **button:** add pointer to menu buttons ([5f6f955](https://github.com/axelrizo/seistreinta-frontend-weather-app/commit/5f6f9557312aec155a776dcd93a88eef9fb85a11))
+* **importsq:** remove imports ([e83c5f4](https://github.com/axelrizo/seistreinta-frontend-weather-app/commit/e83c5f4a1cc4acbbab92cbc21f6de5a61c373651))
+* **search:** fix not city selected ([626b658](https://github.com/axelrizo/seistreinta-frontend-weather-app/commit/626b658910592066aff82a66db3333c525867c50))
+* **weather:** fix humidity indicator space ([321e277](https://github.com/axelrizo/seistreinta-frontend-weather-app/commit/321e277040998c911fb91faa60c3515f1dc963b4))
+
 ## [1.0.1](https://github.com/axelrizo/seistreinta-frontend-weather-app/compare/0.2.0...1.0.1) (2023-07-18)
 
 
