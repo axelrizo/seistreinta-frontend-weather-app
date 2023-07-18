@@ -4,6 +4,7 @@
   top: 0;
   height: calc(100vh - 50px);
   width: 100%;
+  max-width: 400px;
   background-color: var(--background-white-2);
   color: var(--background-white-2-text-color-brand-ocean-blue);
   transform: translateX(-100%);
