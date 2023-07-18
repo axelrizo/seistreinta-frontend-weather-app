@@ -1,7 +1,9 @@
 import { BasePage } from '@/components/base/BasePage'
+import { PageIndexForecast } from '@/components/page/PageIndexForecast'
 import { PageIndexGoogleMap } from '@/components/page/PageIndexGoogleMap'
 import { PageIndexHero } from '@/components/page/PageIndexHero'
 import { PageIndexNotSelectedCity } from '@/components/page/PageIndexNotSelectedCity'
+import { PageIndexTodayHightlight } from '@/components/page/PageIndexTodayHightlight'
 import { SearchInformationContext } from '@/context/SearchInformationContext'
 import { useFetch } from '@/hooks/useFetch'
 import { useFetchGetNotification } from '@/hooks/useFetchGetNotification'
@@ -52,7 +54,9 @@ export default function Home() {
           ) : (
             <>
               <PageIndexHero weather={data} />
-              {/* <PageIndexGoogleMap /> */}
+              <PageIndexTodayHightlight weather={data} />
+              <PageIndexForecast />
+              <PageIndexGoogleMap />
             </>
           )}
         </>
