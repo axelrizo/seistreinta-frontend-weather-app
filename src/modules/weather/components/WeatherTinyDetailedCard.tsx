@@ -23,8 +23,8 @@ export const WeatherTinyDetailedCard: FC<Props> = ({ forecast }) => {
         className={`${style['forecast-card__image']}`}
       />
       <p className={`${style['forecast-card__data']}`}>
-        <div>{Math.round(forecast.main.temp_min)}&deg;C</div>
-        <div>{Math.round(forecast.main.temp_max)}&deg;C</div>
+        <span>{Math.round(forecast.main.temp_min)}&deg;C</span>
+        <span>{Math.round(forecast.main.temp_max)}&deg;C</span>
       </p>
     </article>
   )

@@ -23,9 +23,14 @@ export const LayoutHeaderMobile = () => {
     setIsOptionsAsideOpen((value) => !value)
   }
 
+  const handleCloseOptionsMenu = () => {
+    setIsSearchAsideOpen(false)
+    setIsOptionsAsideOpen(false)
+  }
+
   return (
     <header className={styles['header-mobile']}>
-      <LayoutMobileOptionsMenu isOptionsAsideOpen={isOptionsAsideOpen} />
+      <LayoutMobileOptionsMenu isOptionsAsideOpen={isOptionsAsideOpen} closeOptionsMenu={handleCloseOptionsMenu} />
       <LayoutMobileCitySearchAside isSearchAsideOpen={isSearchAsideOpen} closeAsideMenu={closeSearchAside} />
       <LayoutMobileMenu onClickSearchButton={toggleSearchAside} onClickOptionsButton={toggleOptionsAside} />
     </header>
