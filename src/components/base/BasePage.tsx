@@ -6,5 +6,9 @@ interface Props {
 }
 
 export const BasePage: FC<Props> = ({ children }) => {
-  return <div className={style['base-page']}>{children}</div>
+  return (
+    <div className={style['base-page']}>
+      <div className={style['base-page__container']}>{children}</div>
+    </div>
+  )
 }

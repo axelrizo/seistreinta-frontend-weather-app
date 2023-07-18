@@ -13,6 +13,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useContext, useEffect } from 'react'
 import Skeleton from 'react-loading-skeleton'
+import style from './index.module.css'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -67,8 +68,10 @@ export default function Home() {
             <div>{t('layout.no-data')}</div>
           ) : (
             <>
-              <PageIndexHero weather={data} />
-              <PageIndexTodayHightlight weather={data} />
+              <div className={`${style['index__weather-info']}`}>
+                <PageIndexHero weather={data} />
+                <PageIndexTodayHightlight weather={data} />
+              </div>
               <PageIndexForecast forecast={forecastData} />
               <PageIndexGoogleMap />
             </>

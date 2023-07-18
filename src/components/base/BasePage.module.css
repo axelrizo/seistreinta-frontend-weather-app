@@ -1,6 +1,36 @@
 .base-page {
-  padding: 8px;
-  min-height: 100vh;
   background-color: var(--background-white-2);
   color: var(--background-white-2-text-color-brand-ocean-blue);
+}
+
+.base-page__container {
+  padding: 8px;
+  min-height: 100vh;
+  margin: auto;
+}
+
+@media (min-width: 640px) {
+  .base-page__container {
+    max-width: 620px;
+  }
+}
+@media (min-width: 768px) {
+  .base-page__container {
+    max-width: 750px;
+  }
+}
+@media (min-width: 1024px) {
+  .base-page__container {
+    max-width: 1000px;
+  }
+}
+@media (min-width: 1280px) {
+  .base-page__container {
+    max-width: 1240px;
+  }
+}
+@media (min-width: 1536px) {
+  .base-page__container {
+    max-width: 1500px;
+  }
 }
