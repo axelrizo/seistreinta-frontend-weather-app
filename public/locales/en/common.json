@@ -25,27 +25,26 @@
     "air-pressure": "Air Pressure"
   },
   "day": {
-    "sunday": "Sunday",
-    "monday": "Monday",
-    "tuesday": "Tuesday",
-    "wendnesday": "Wednesday",
-    "thursday": "Thursday",
-    "friday": "Friday",
-    "saturday": "Saturday",
-    "wednesday": "Wednesday"
+    "sunday": "Sun",
+    "monday": "Mon",
+    "tuesday": "Tue",
+    "thursday": "Thu",
+    "friday": "Fri",
+    "saturday": "Sat",
+    "wednesday": "Wed"
   },
   "month": {
-    "january": "January",
-    "february": "February",
-    "march": "March",
-    "april": "April",
+    "january": "Jan",
+    "february": "Feb",
+    "march": "Mar",
+    "april": "Apr",
     "may": "May",
-    "june": "June",
-    "july": "July",
-    "august": "August",
-    "september": "September",
-    "october": "October",
-    "november": "November",
-    "december": "December"
+    "june": "Jun",
+    "july": "Jul",
+    "august": "Aug",
+    "september": "Sep",
+    "october": "Oct",
+    "november": "Nov",
+    "december": "Dec"
   }
 }
