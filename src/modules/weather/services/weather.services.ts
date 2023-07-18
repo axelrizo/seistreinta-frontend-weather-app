@@ -12,7 +12,7 @@ export const weatherServices = {
 
   async get5DayForecast({ lat, lon }: { lon: number; lat: number }) {
     const response = await openWeatherMapBaseAxiosInstance<ForecastWeather>('/data/2.5/forecast', {
-      params: { lat, lon },
+      params: { lat, lon, units: 'metric' },
     })
     return response.data
   },
