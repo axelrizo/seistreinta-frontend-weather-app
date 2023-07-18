@@ -1,10 +1,8 @@
-import React, { FC } from 'react'
-import Link from 'next/link'
-import { TiWeatherCloudy } from 'react-icons/ti'
+import { useTranslation } from 'next-i18next'
+import { FC } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BsGear } from 'react-icons/bs'
 import styles from './LayoutMobileMenu.module.css'
-import { useTranslation } from 'next-i18next'
 
 interface Props {
   onClickSearchButton: () => void
@@ -26,10 +24,6 @@ export const LayoutMobileMenu: FC<Props> = ({ onClickSearchButton, onClickOption
             <AiOutlineSearch size={30} />
             {t('layout.menu-search')}
           </li>
-          {/* <li className={styles['mobile-menu__list-item']}>
-            <TiWeatherCloudy size={30} />
-            {t('layout.menu-weather')}
-          </li> */}
           <li onClick={() => onClickOptionsButton()} className={styles['mobile-menu__list-item']}>
             <BsGear size={30} />
             {t('layout.menu-options')}
