@@ -28,7 +28,7 @@ export const useFormatDate = ({ date }: { date: Date }) => {
     t('month.december'),
   ]
 
-  const formattedDate = `${weekday[date.getDay()]} ${date.getDate()} ${months[date.getMonth()]}`
+  const formattedDate = `${weekday[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`
 
   return { formattedDate }
 }
