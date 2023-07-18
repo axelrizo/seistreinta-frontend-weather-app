@@ -6,6 +6,10 @@
   gap: 16px;
 }
 
+.highlight-cards__humidity {
+  padding: 0 16px 16px 16px;
+}
+
 @media (min-width: 640px) {
   .highlight-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));

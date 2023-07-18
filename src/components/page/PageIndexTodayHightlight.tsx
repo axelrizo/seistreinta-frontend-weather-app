@@ -15,7 +15,9 @@ export const PageIndexTodayHightlight: FC<Props> = ({ weather }) => {
     <div className={`${style['highlight-cards']}`}>
       <BaseHighlightCard data={weather.wind.speed} measure="mps" title={t('index.wind')}></BaseHighlightCard>
       <BaseHighlightCard data={weather.main.humidity} measure="%" title={t('index.humidity')}>
-        <WeatherHumidityIndicator humidity={weather.main.humidity} />
+        <div className={`${style['highlight-cards__humidity']}`}>
+          <WeatherHumidityIndicator humidity={weather.main.humidity} />
+        </div>
       </BaseHighlightCard>
       <BaseHighlightCard data={weather.visibility / 1000} measure="km" title={t('index.visibility')} />
       <BaseHighlightCard data={weather.main.pressure} measure="hPa" title={t('index.air-pressure')} />
