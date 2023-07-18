@@ -1,5 +1,12 @@
 
 
+## [1.0.1](https://github.com/axelrizo/seistreinta-frontend-weather-app/compare/0.2.0...1.0.1) (2023-07-18)
+
+
+### Bug Fixes
+
+* **tag:** fix tag version ([de3d57d](https://github.com/axelrizo/seistreinta-frontend-weather-app/commit/de3d57d347d66e70236378e18408159eb9c556b6))
+
 ## 0.2.0 (2023-07-18)
 
 
