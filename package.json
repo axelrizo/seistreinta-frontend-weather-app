@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "release": "release-it"
   },
   "dependencies": {
     "@types/node": "20.4.2",
@@ -24,6 +25,41 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.0",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@release-it/conventional-changelog": "^5.0.0",
+    "husky": "^8.0.1",
+    "release-it": "^15.1.1"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md",
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            },
+            {}
+          ]
+        }
+      }
+    }
   }
 }
