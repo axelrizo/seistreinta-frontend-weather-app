@@ -1,9 +1,10 @@
-import { CurrentWeather } from '@/modules/weather/interfaces/CurrentWeather'
-import { FC } from 'react'
-import style from './PageIndexTodayHightlight.module.css'
-import { BaseHighlightCard } from '../base/BaseHighlightCard'
-import { useTranslation } from 'next-i18next'
 import { WeatherHumidityIndicator } from '@/modules/weather/components/WeatherHumidityIndicator'
+import { WeatherWindIndicator } from '@/modules/weather/components/WeatherWindIndicator'
+import { CurrentWeather } from '@/modules/weather/interfaces/CurrentWeather'
+import { useTranslation } from 'next-i18next'
+import { FC } from 'react'
+import { BaseHighlightCard } from '../base/BaseHighlightCard'
+import style from './PageIndexTodayHightlight.module.css'
 
 interface Props {
   weather: CurrentWeather
@@ -13,9 +14,13 @@ export const PageIndexTodayHightlight: FC<Props> = ({ weather }) => {
   const { t } = useTranslation()
   return (
     <div className={`${style['highlight-cards']}`}>
-      <BaseHighlightCard data={weather.wind.speed} measure="mps" title={t('index.wind')}></BaseHighlightCard>
+      <BaseHighlightCard data={weather.wind.speed} measure="mps" title={t('index.wind')}>
+        <div className={`${style['highlight-cards__extra-content']}`}>
+          <WeatherWindIndicator degrees={weather.wind.deg} />
+        </div>
+      </BaseHighlightCard>
       <BaseHighlightCard data={weather.main.humidity} measure="%" title={t('index.humidity')}>
-        <div className={`${style['highlight-cards__humidity']}`}>
+        <div className={`${style['highlight-cards__extra-content']}`}>
           <WeatherHumidityIndicator humidity={weather.main.humidity} />
         </div>
       </BaseHighlightCard>
