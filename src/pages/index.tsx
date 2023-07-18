@@ -26,36 +26,50 @@ export default function Home() {
   const { t } = useTranslation()
   const { city } = useContext(SearchInformationContext)
   const { data, error, fetchData: fetchForecast, loading } = useFetch({ fetchFunction: weatherServices.getForecast })
+
   const { fetchData } = useFetchGetNotification({
     fetchFunction: fetchForecast,
     failText: t('index.not-lan-lon-found'),
   })
 
+  const {
+    data: forecastData,
+    error: forecastError,
+    fetchData: fetchFutureForecast,
+    loading: forecastLoading,
+  } = useFetch({ fetchFunction: weatherServices.get5DayForecast })
+
+  const { fetchData: fetchDataFutureForecast } = useFetchGetNotification({
+    fetchFunction: fetchFutureForecast,
+    failText: t('index.not-lan-lon-found'),
+  })
+
   useEffect(() => {
     if (!city) return
-    fetchData({ lon: city!.lon, lat: city!.lat })
+    fetchData({ lon: city.lon, lat: city.lat })
+    fetchDataFutureForecast({ lon: city.lon, lat: city.lat })
   }, [city])
 
   return (
     <BasePage>
       {city ? (
         <>
-          {loading ? (
+          {loading || forecastLoading ? (
             <>
               <Skeleton />
               <Skeleton />
               <Skeleton />
               <Skeleton />
             </>
-          ) : error ? (
+          ) : error || forecastError ? (
             <div>{t('layout.error-search')}</div>
-          ) : !data ? (
+          ) : !data || !forecastData ? (
             <div>{t('layout.no-data')}</div>
           ) : (
             <>
               <PageIndexHero weather={data} />
               <PageIndexTodayHightlight weather={data} />
-              <PageIndexForecast />
+              <PageIndexForecast forecast={forecastData} />
               <PageIndexGoogleMap />
             </>
           )}
