@@ -1,0 +1,15 @@
+.humidity-indicator__measures {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+.humidity-indicator__progress {
+  background-color: var(--background-gray-700);
+  height: 8px;
+}
+.humidity-indicator__progress-level {
+  background-color: var(--background-gray-700-contrast-brand-darker-blue);
+  height: 100%;
+}
