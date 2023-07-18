@@ -12,7 +12,7 @@ export const PageIndexTodayHightlight: FC<Props> = ({ weather }) => {
   const { t } = useTranslation()
   return (
     <div className={`${style['highlight-cards']}`}>
-      <BaseHighlightCard data={weather.wind.speed} measure="mph" title={t('index.wind')}></BaseHighlightCard>
+      <BaseHighlightCard data={weather.wind.speed} measure="mps" title={t('index.wind')}></BaseHighlightCard>
       <BaseHighlightCard data={weather.main.humidity} measure="%" title={t('index.humidity')}></BaseHighlightCard>
       <BaseHighlightCard
         data={weather.visibility / 1000}
