@@ -1,5 +1,5 @@
 import { CitiesList } from '@/modules/cities/components/CitiesList'
-import { FC, useState, useContext } from 'react'
+import { FC, useState, useContext, useEffect, useRef } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import style from './LayoutMobileCitySearchAside.module.css'
 import { useFetch } from '@/hooks/useFetch'
@@ -18,6 +18,7 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen, clos
   const [search, setSearch] = useState('')
   const { t } = useTranslation()
   const { updateCity } = useContext(SearchInformationContext)
+  const searchInput = useRef<HTMLInputElement>(null)
 
   const {
     data,
@@ -58,6 +59,10 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen, clos
     closeAsideMenu()
   }
 
+  useEffect(() => {
+    if (isSearchAsideOpen) searchInput?.current?.focus()
+  }, [isSearchAsideOpen])
+
   return (
     <aside className={`${style['search-aside']} ${asideOpenClass}`}>
       <div className={`${style['search-aside__input-container']}`}>
@@ -67,6 +72,7 @@ export const LayoutMobileCitySearchAside: FC<Props> = ({ isSearchAsideOpen, clos
         <input
           type="search"
           value={search}
+          ref={searchInput}
           onKeyUp={(e) => handleKeyUpInInput(e)}
           onChange={(e) => handleChangeOnSearchInput(e)}
           className={`${style['search-aside__input']}`}
