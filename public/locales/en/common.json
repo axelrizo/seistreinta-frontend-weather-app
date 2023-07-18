@@ -22,7 +22,8 @@
     "wind": "Wind status",
     "humidity": "Humidity",
     "visibility": "Visibility",
-    "air-pressure": "Air Pressure"
+    "air-pressure": "Air Pressure",
+    "page-not-selected-button": "Search city"
   },
   "day": {
     "sunday": "Sun",

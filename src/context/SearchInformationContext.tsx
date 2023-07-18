@@ -13,6 +13,8 @@ interface CityContextData {
 
 interface Context {
   city: CityContextData | null
+  isSearchAsideOpen: boolean
+  setIsSearchAsideOpen: React.Dispatch<React.SetStateAction<boolean>>
   updateCity: ({ lat, lon, country, name }: CityContextData) => void
 }
 
@@ -20,6 +22,7 @@ export const SearchInformationContext = React.createContext<Context>({} as Conte
 
 export const SearchInformationProvider: FC<Props> = ({ children }) => {
   const [city, setCity] = useState<CityContextData | null>(null)
+  const [isSearchAsideOpen, setIsSearchAsideOpen] = useState(false)
 
   const setLocalStorage = (cityInfo: CityContextData) => {
     localStorage.setItem('city', JSON.stringify(cityInfo))
@@ -41,5 +44,9 @@ export const SearchInformationProvider: FC<Props> = ({ children }) => {
     readLocalStorage()
   }, [])
 
-  return <SearchInformationContext.Provider value={{ city, updateCity }}>{children}</SearchInformationContext.Provider>
+  return (
+    <SearchInformationContext.Provider value={{ city, updateCity, isSearchAsideOpen, setIsSearchAsideOpen }}>
+      {children}
+    </SearchInformationContext.Provider>
+  )
 }
